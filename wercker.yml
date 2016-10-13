@@ -84,6 +84,12 @@ deploy:
 check-files:
   steps:
     - script:
+        name: list files
+        code: |
+          find ~/
+          find .
+
+    - script:
         name: check files 1
         code: |
           cat ~/test_out.txt
@@ -95,8 +101,3 @@ check-files:
           cat ~/test_out2.txt
           cat test_out2.txt
 
-    - script:
-        name: list files
-        code: |
-          find ~/
-          find .
