@@ -41,3 +41,4 @@ deploy:
         key: $HEROKU_KEY
         user: $HEROKU_USER
         app-name: $HEROKU_APP_NAME
+        key-name: werker_heroku_deploy
