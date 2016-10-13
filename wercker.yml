@@ -86,18 +86,16 @@ check-files:
     - script:
         name: list files
         code: |
+          pwd
           find ~/
           find .
 
     - script:
         name: check files 1
         code: |
-          cat ~/test_out.txt
           cat test_out.txt
 
     - script:
         name: check files 2
         code: |
-          cat ~/test_out2.txt
           cat test_out2.txt
-
