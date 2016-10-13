@@ -32,6 +32,11 @@ build:
         code: |
           echo "heyheyhey" > ~/test_out.txt
 
+    - script:
+        name: output to file pwd
+        code: |
+          echo "heyheyhey" > test_out.txt
+
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
@@ -44,6 +49,11 @@ build:
         name: list home
         code: |
           ls -l ~/
+
+    - script:
+        name: list pwd
+        code: |
+          ls -l
 
 deploy:
   steps:
@@ -58,9 +68,17 @@ deploy:
         code: |
           echo "2hey2hey2hey" > ~/test_out2.txt
     - script:
+        name: output to file2 pwd
+        code: |
+          echo "2hey2hey2hey" > test_out2.txt
+    - script:
         name: list home
         code: |
           ls -l ~/
+    - script:
+        name: list pwd
+        code: |
+          ls -l
 
 
 check-files:
@@ -69,20 +87,16 @@ check-files:
         name: check files 1
         code: |
           cat ~/test_out.txt
+          cat test_out.txt
 
     - script:
         name: check files 2
         code: |
           cat ~/test_out2.txt
+          cat test_out2.txt
 
     - script:
-        name: list home
+        name: list files
         code: |
           find ~/
-
-
-
-    - script:
-        name: list pwd
-        code: |
           find .
