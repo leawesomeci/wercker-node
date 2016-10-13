@@ -27,6 +27,11 @@ build:
     # A step that executes `npm test` command
     - npm-test
 
+    - script:
+        name: output to file
+        code: |
+          echo "heyheyhey" > ~/test_out.txt
+
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
@@ -35,6 +40,11 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
 
+    - script:
+        name: list home
+        code: |
+          ls -l ~/
+
 deploy:
   steps:
     - heroku-deploy:
@@ -42,3 +52,37 @@ deploy:
         user: $HEROKU_USER
         app-name: $HEROKU_APP_NAME
         key-name: werker_heroku_deploy
+
+    - script:
+        name: output to file2
+        code: |
+          echo "2hey2hey2hey" > ~/test_out2.txt
+    - script:
+        name: list home
+        code: |
+          ls -l ~/
+
+
+check-files:
+  steps:
+    - script:
+        name: check files 1
+        code: |
+          cat ~/test_out.txt
+
+    - script:
+        name: check files 2
+        code: |
+          cat ~/test_out2.txt
+
+    - script:
+        name: list home
+        code: |
+          find ~/
+
+
+
+    - script:
+        name: list pwd
+        code: |
+          find .
