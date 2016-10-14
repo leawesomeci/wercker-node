@@ -95,10 +95,10 @@ check-files:
         code: |
           cat test_out.txt
 
-    - script:
-        name: check files 2
-        code: |
-          [ -e test_out2.txt ] && cat test_out2.txt
+    # - script:
+    #     name: check files 2
+    #     code: |
+    #       [ -e test_out2.txt ] && cat test_out2.txt
 
 
 check-env:
