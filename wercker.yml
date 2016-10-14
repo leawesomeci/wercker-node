@@ -98,7 +98,7 @@ check-files:
     - script:
         name: check files 2
         code: |
-          cat test_out2.txt
+          [ -e test_out2.txt ] && cat test_out2.txt
 
 
 check-env:
