@@ -99,3 +99,10 @@ check-files:
         name: check files 2
         code: |
           cat test_out2.txt
+
+
+check-env:
+  steps:
+    - script:
+        name: env
+        code: env
