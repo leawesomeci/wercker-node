@@ -116,7 +116,7 @@ check-files:
     - script:
         name: check checked cookie
         code: |
-          cat files_checked.txt
+          cat files_checked.txt || echo "not found"
 
     - script:
         name: add files checked cookie
