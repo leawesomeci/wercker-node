@@ -113,6 +113,15 @@ check-files:
         code: |
           env
 
+    - script:
+        name: check checked cookie
+        code: |
+          cat files_checked.txt
+
+    - script:
+        name: add files checked cookie
+        code: |
+          echo "yes" > files_checked.txt
 
     # - script:
     #     name: check files 2
