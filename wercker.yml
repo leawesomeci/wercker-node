@@ -28,6 +28,11 @@ build:
     - npm-test
 
     - script:
+        name: pwd
+        code: |
+          pwd
+
+    - script:
         name: output to file
         code: |
           echo "heyheyhey" > ~/test_out.txt
@@ -82,6 +87,9 @@ deploy:
 
 
 check-files:
+  box: python
+  services:
+      - redis:2.8
   steps:
     - script:
         name: list files
@@ -94,6 +102,11 @@ check-files:
         name: check files 1
         code: |
           cat test_out.txt
+
+    - script:
+        name: env
+        code: |
+          env
 
 
     # - script:
