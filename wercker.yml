@@ -76,11 +76,11 @@ deploy:
     - script:
         name: output to file2
         code: |
-          echo "2hey2hey2hey" > ~/test_out2.txt
+          echo "2hey2hey2hey" > ~/heroku_cookie.txt
     - script:
         name: output to file2 pwd
         code: |
-          echo "2hey2hey2hey" > test_out2.txt
+          echo "2hey2hey2hey" > heroku_cookie.txt
     - script:
         name: list home
         code: |
@@ -126,7 +126,7 @@ check-files:
     # - script:
     #     name: check files 2
     #     code: |
-    #       [ -e test_out2.txt ] && cat test_out2.txt
+    #       [ -e heroku_cookie.txt ] && cat heroku_cookie.txt
 
 
 check-env:
