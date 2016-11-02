@@ -69,6 +69,11 @@ deploy:
         key-name: werker_heroku_deploy
 
     - script:
+        name: pwd
+        code: |
+          pwd
+
+    - script:
         name: output to file2
         code: |
           echo "2hey2hey2hey" > ~/test_out2.txt
